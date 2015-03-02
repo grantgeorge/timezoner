@@ -12,15 +12,10 @@ angular.module('timezonerApp')
 
     $scope.timezones = timezones;
 
-    $scope.selectedTimezone = timezones[7].ianaFormat;
+    $scope.selectedTimezone = 'UTC';
 
     $scope.today = function() {
-      $scope.dt = new Date();
-      $scope.dt.setHours(14);
-      $scope.dt.setMinutes(0);
-      $scope.dt.setSeconds(0);
-
-      $scope.momentTime = moment.tz($scope.dt, "America/New_York");
+      $scope.momentTime = moment.tz("2015-03-02 12:00:00", "UTC");
       console.log($scope.momentTime);
     };
     $scope.today();
